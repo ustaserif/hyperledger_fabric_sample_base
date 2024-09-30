@@ -1,0 +1,29 @@
+./ordererca.sh
+./org1ca.sh
+./org2ca.sh
+
+./generate_artifacts -ca
+
+./orderer1.sh
+./orderer2.sh
+
+./peer1.sh
+./peer2.sh
+./peer3.sh
+./peer4.sh
+
+./join_orderers.sh
+
+. ./peer1admin.sh
+./join_channel.sh
+
+. ./peer2admin.sh
+./join_channel.sh
+
+. ./peer3admin.sh
+./join_channel.sh
+
+. ./peer4admin.sh
+./join_channel.sh
+
+./install_approve_commit_chaincode_peer1.sh
